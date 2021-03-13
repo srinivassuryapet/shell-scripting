@@ -5,6 +5,6 @@ if [ "$USER_ID" -ne 0 ]; then
   echo "you must be a root user to execute this script"
   exit 1
 fi
-Print(){
+Print () {
   echo "$(date +%c) $(hostname) ${COMPONENT} :: $1",
 }
