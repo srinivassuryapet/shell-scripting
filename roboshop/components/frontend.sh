@@ -1,6 +1,6 @@
 #!/bin/bash
 COMPONENT=frontend
-source components/common.sh
+source /home/centos/shell-scripting/roboshop/components/common.sh
 Print"Installing Nginx"
 #yum install nginx -y
 Print"Starting Nginx Service"
