@@ -1,9 +1,9 @@
 #!/bin/bash
 COMPONENT=frontend
-source /home/centos/shell-scripting/roboshop/components/common.sh
-Print"Installing Nginx"
+source components/common.sh
+Print "Installing Nginx"
 #yum install nginx -y
-Print"Starting Nginx Service"
+Print "Starting Nginx Service"
 exit
 systemctl enable nginx
 systemctl start nginx
