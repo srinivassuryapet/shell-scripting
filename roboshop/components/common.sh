@@ -6,5 +6,5 @@ if [ "$USER_ID" -ne 0 ]; then
   exit 1
 fi
 Print() {
-  echo "$(date +%c) $(hostname) ${COMPONENT} :: $1",
+  echo -e "$(date +%c) $(hostname) ${COMPONENT} :: $1",
 }
