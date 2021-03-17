@@ -16,3 +16,11 @@ Print() {
   echo -e "[INFO]$2"
   echo -e "[INFO]-------------------------------------------------"
 }
+
+Stat() {
+  if [ "$1" -eq 0 ]; then
+    echo "Success"
+  else
+    echo "Failure"
+ fi
+ }
