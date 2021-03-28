@@ -16,10 +16,13 @@ Stat $?
 Print "Extract Catalogue Component Code"
 rm -rf /home/roboshop/catalogue && cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main catalogue && cd /home/roboshop/catalogue
 Stat $?
-exit
 
-mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-systemctl daemon-reload
-systemctl start catalogue
-systemctl enable catalogue
+Print "Install nodejs dependencies"
+npm install
+Stat $?
+
+# mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+# systemctl daemon-reload
+# systemctl start catalogue
+# systemctl enable catalogue
 
