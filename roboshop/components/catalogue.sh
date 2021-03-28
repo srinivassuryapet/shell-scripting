@@ -18,7 +18,7 @@ rm -rf /home/roboshop/catalogue && cd /home/roboshop && unzip /tmp/catalogue.zip
 Stat $?
 
 Print "Install nodejs dependencies"
-npm install
+npm install --unsafe-perm
 Stat $?
 
 
