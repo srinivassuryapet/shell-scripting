@@ -21,9 +21,11 @@ Print "Install nodejs dependencies"
 npm install --unsafe-perm
 Stat $?
 
+Print "Update SystemD script for catalogue"
+sed -i -e "s/MONGO_DNSNAME/mongodb-ss.srinivassuryapet.ml/" /home/roboshop/catalogue/systemd.service && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+Stat $?
 
-# mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-# systemctl daemon-reload
-# systemctl start catalogue
-# systemctl enable catalogue
+Print "Start catalogue service"
+systemctl daemon-reload && systemctl start catalogue && systemctl enable catalogue
+Stat $?
 
