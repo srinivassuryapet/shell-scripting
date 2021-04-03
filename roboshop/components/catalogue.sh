@@ -16,6 +16,7 @@ Stat $?
 Print "Extract Catalogue Component Code"
 rm -rf /home/roboshop/catalogue && mkdir -p /home/roboshop/catalogue && cd /home/roboshop/catalogue && unzip /tmp/catalogue.zip
 Stat $?
+exit
 
 Print "Install nodejs dependencies"
 npm install --unsafe-perm
