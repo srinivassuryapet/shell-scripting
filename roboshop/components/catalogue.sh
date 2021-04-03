@@ -16,17 +16,16 @@ Stat $?
 Print "Extract Catalogue Component Code"
 rm -rf /home/roboshop/catalogue && mkdir -p /home/roboshop/catalogue && cd /home/roboshop/catalogue && unzip /tmp/catalogue.zip
 Stat $?
-exit
 
 Print "Install nodejs dependencies"
 npm install --unsafe-perm
 Stat $?
 
 Print "Update SystemD script for catalogue"
-sed -i -e "s/MONGO_DNSNAME/mongodb-ss.srinivassuryapet.ml/" /home/roboshop/catalogue/systemd.service && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+sed -i -e 's/MONGO_DNSNAME/mongodb-ss.srinivassuryapet.ml/' /home/roboshop/catalogue/systemd.service && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 Stat $?
 
 Print "Start catalogue service"
-systemctl daemon-reload && systemctl start catalogue && systemctl enable catalogue
+systemctl daemon-reload && systemctl restart catalogue && systemctl enable catalogue
 Stat $?
 
