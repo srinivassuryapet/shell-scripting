@@ -9,6 +9,7 @@ Print "Adding roboshop user"
 id roboshop || useradd roboshop
 Stat $?
 
+
 Print "Download Catalogue Code"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
 Stat $?
