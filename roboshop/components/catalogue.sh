@@ -27,6 +27,6 @@ sed -i -e 's/MONGO_DNSNAME/mongodb-ss.srinivassuryapet.ml/' /home/roboshop/catal
 Stat $?
 
 Print "Start catalogue service"
-systemctl daemon-reload && systemctl restart catalogue && systemctl enable catalogue
+systemctl daemon-reload && systemctl start catalogue && systemctl enable catalogue
 Stat $?
 
