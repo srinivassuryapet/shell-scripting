@@ -15,7 +15,7 @@ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/cat
 Stat $?
 
 Print "Extract Catalogue Component Code"
-rm -rf /home/roboshop/catalogue && mkdir -p /home/roboshop/catalogue && cd /home/roboshop/catalogue && unzip -o /tmp/catalogue.zip && mv catalogue-main catalogue
+cd /home/roboshop/ && unzip -o /tmp/catalogue.zip && mv catalogue-main catalogue && cd /home/roboshop/catalogue
 Stat $?
 
 Print "Install nodejs dependencies"
