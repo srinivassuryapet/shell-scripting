@@ -17,6 +17,8 @@ Print "Extract User Component Code"
 rm -rf /home/roboshop/cart && cd /home/roboshop/ && unzip -o /tmp/cart.zip && mv cart-main cart && cd cart
 Stat $?
 
+chown roboshop:roboshop /home/roboshop -R
+
 Print "Install nodejs dependencies"
 npm install --unsafe-perm
 Stat $?

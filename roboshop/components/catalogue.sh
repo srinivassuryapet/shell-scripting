@@ -22,6 +22,8 @@ Print "Install nodejs dependencies"
 npm install --unsafe-perm
 Stat $?
 
+chown roboshop:roboshop /home/roboshop -R
+
 Print "Update SystemD script for catalogue"
 sed -i -e 's/MONGO_DNSNAME/mongodb-ss.srinivassuryapet.ml/' /home/roboshop/catalogue/systemd.service && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 Stat $?
