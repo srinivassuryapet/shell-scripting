@@ -25,5 +25,5 @@ user:	## Install user component
 	@sh components/user.sh
 
 redis: common
-redis:	## Install redis component
+redis:  ## Install redis component
 	@sh components/redis.sh
