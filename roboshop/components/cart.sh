@@ -22,7 +22,6 @@ chown roboshop:roboshop /home/roboshop -R
 Print "Install nodejs dependencies"
 npm install --unsafe-perm
 Stat $?
-exit
 
 Print "Update SystemD script for cart"
 sed -i -e 's/REDIS_ENDPOINT/redis-ss.srinivassuryapet.ml/' -e 's/CATALOGUE_ENDPOINT/catalogue-ss.srinivassuryapet.ml/' /home/roboshop/cart/systemd.service && mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service
