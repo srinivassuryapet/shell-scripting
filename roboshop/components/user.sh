@@ -20,7 +20,6 @@ Stat $?
 Print "Install nodejs dependencies"
 npm install --unsafe-perm
 Stat $?
-exit
 
 chown roboshop:roboshop /home/roboshop -R
 
