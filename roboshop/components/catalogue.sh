@@ -15,11 +15,11 @@ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/cat
 Stat $?
 
 Print "Extract Catalogue Component Code"
-rm -rf /home/roboshop/catalogue && cd /home/roboshop/ && unzip -o /tmp/catalogue.zip && mv catalogue-main catalogue && cd catalogue
+rm -rf /home/roboshop/catalogue && cd /home/roboshop/ && unzip -o /tmp/catalogue.zip && mv catalogue-main catalogue
 Stat $?
 
 Print "Install nodejs dependencies"
-npm install --unsafe-perm
+cd /home/roboshop/catalogue && npm install --unsafe-perm
 Stat $?
 
 chown roboshop:roboshop /home/roboshop -R
