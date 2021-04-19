@@ -14,11 +14,11 @@ curl -s -L -o /tmp/cart.zip "https://github.com/roboshop-devops-project/cart/arc
 Stat $?
 
 Print "Extract User Component Code"
-rm -rf /home/roboshop/cart && cd /home/roboshop/ && unzip -o /tmp/cart.zip && mv cart-main cart && cd cart
+rm -rf /home/roboshop/cart && cd /home/roboshop/ && unzip -o /tmp/cart.zip && mv cart-main cart
 Stat $?
 
 Print "Install nodejs dependencies"
-npm install --unsafe-perm
+cd /home/roboshop/cart && npm install --unsafe-perm
 Stat $?
 
 chown roboshop:roboshop /home/roboshop -R
