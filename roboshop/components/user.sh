@@ -14,11 +14,11 @@ curl -s -L -o /tmp/user.zip "https://github.com/roboshop-devops-project/user/arc
 Stat $?
 
 Print "Extract User Component Code"
-rm -rf /home/roboshop/user && cd /home/roboshop/ && unzip -o /tmp/user.zip && mv user-main user && cd user
+rm -rf /home/roboshop/user && cd /home/roboshop/ && unzip -o /tmp/user.zip && mv user-main user
 Stat $?
 
 Print "Install nodejs dependencies"
-npm install --unsafe-perm
+cd /home/roboshop/user && npm install --unsafe-perm
 Stat $?
 
 chown roboshop:roboshop /home/roboshop -R
