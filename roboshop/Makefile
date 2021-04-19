@@ -27,3 +27,20 @@ user:	## Install user component
 redis: common
 redis:  ## Install redis component
 	@sh components/redis.sh
+
+mysql: common
+mysql:  ## Install mysql component
+	@sh components/mysql.sh
+
+shipping: common
+shipping:  ## Install shipping component
+	@sh components/shipping.sh
+
+rabbitmq: common
+rabbitmq:  ## Install rabbitmq component
+	@sh components/rabbitmq
+
+payment: common
+payment:  ## Install payment component
+	@sh components/payment
+
