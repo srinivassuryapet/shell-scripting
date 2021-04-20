@@ -27,7 +27,6 @@ if [ $? -ne 0 ]; then
   Print "Grab default mysql password"
   DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
   Stat $?
-
   Print "Resetting mysql default password"
   mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" <<EOF
   ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_RoboShop*999';
@@ -43,4 +42,4 @@ Stat $?
 
 Print "Load Schema"
 cd /tmp && unzip -o mysql.zip && cd mysql-main && mysql -u root -ppassword <shipping.sql
-
+Stat $?
