@@ -25,7 +25,7 @@ Stat $?
 
 Print "Copy the service file and start the service."
 #cp /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
-sed -i -e 's/CARTENDPOINT/cart-ss.srinivassuryapet.ml/' -e  /home/roboshop/shipping/systemd.service && mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
+sed -i -e 's/CARTENDPOINT/cart-ss.srinivassuryapet.ml/'  /home/roboshop/shipping/systemd.service && mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
 
 Print "Restart Service"
 systemctl daemon-reload && systemctl start shipping && systemctl enable shipping
