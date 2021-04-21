@@ -14,12 +14,10 @@ chown roboshop:roboshop /home/roboshop -R
 
 Print "Download the repo"
 rm -rf /home/roboshop/shipping
-cd /home/roboshop || exit
-curl -s -L -o /tmp/shipping.zip "https://github.com/roboshop-devops-project/shipping/archive/main.zip"
+cd /home/roboshop && curl -s -L -o /tmp/shipping.zip "https://github.com/roboshop-devops-project/shipping/archive/main.zip"
 Stat $?
 unzip -o /tmp/shipping.zip
-cd /home/roboshop/shipping || exit
-mv shipping-main shipping
+mv shipping-main shipping && cd shipping || exit
 
 mvn clean package
 mv target/shipping-1.0.jar shipping.jar
