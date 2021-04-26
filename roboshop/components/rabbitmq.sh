@@ -2,17 +2,23 @@
 COMPONENT=rabbitmq
 source components/common.sh
 
+Print "Install Erlang"
 yum install https://github.com/rabbitmq/erlang-rpm/releases/download/v23.2.6/erlang-23.2.6-1.el7.x86_64.rpm -y
+Stat $?
 
+Print "Setup Rabbitmq Repos"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+Stat $?
 
+Print "Install Rabbitmq"
 yum install rabbitmq-server -y
+Stat $?
 
-systemctl enable rabbitmq-server
+Print "Start Rabbitmq"
+systemctl enable rabbitmq-server && systemctl start rabbitmq-server
+Stat $?
 
-systemctl start rabbitmq-server
-
-rabbitmqctl add_user roboshop roboshop123
-rabbitmqctl set_user_tags roboshop administrator
-rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+Print "Create application user in rabbitmq"
+rabbitmqctl add_user roboshop roboshop123 && rabbitmqctl set_user_tags roboshop administrator && rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+Stat $?
 
