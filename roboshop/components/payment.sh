@@ -30,7 +30,7 @@ sed -i -e "/^uid/ c uid=${USER_ID}" -e "/^gid/ c gid=${GROUP_ID}" /home/roboshop
 chown roboshop:roboshop /home/roboshop -R
 
 Print "Update systemd file and start payment service"
-sed -i -e "s/CARTHOST/cart-ss.srinivassuryapet.ml/" -e "s/USERHOST/user-ss.srinivassuryapet.ml" -e "s/AMQPHOST/rabbitmq-ss.srinivassuryapet.ml" /home/roboshop/payment/systemd.service
+sed -i -e "s/CARTHOST/cart-ss.srinivassuryapet.ml/" -e "s/USERHOST/user-ss.srinivassuryapet.ml/" -e "s/AMQPHOST/rabbitmq-ss.srinivassuryapet.ml/" /home/roboshop/payment/systemd.service
 mv /home/roboshop/payment/systemd.service /etc/systemd/system/payment.service
 systemctl daemon-reload && systemctl enable payment && systemctl start payment
 Stat $?
