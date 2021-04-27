@@ -29,7 +29,6 @@ Stat $?
 chown roboshop:roboshop /home/roboshop -R
 
 Print "Copy the service file and start the service."
-#cp /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
 sed -i -e 's/CARTENDPOINT/cart-ss.srinivassuryapet.ml/' -e 's/DBHOST/mysql-ss.srinivassuryapet.ml/' /home/roboshop/shipping/systemd.service && mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
 
 Print "Restart Service"
