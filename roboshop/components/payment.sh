@@ -2,6 +2,7 @@
 COMPONENT=payment
 source components/common.sh
 
+
 Print "Installing Python 3"
 yum install python36 gcc python3-devel -y
 Stat $?
